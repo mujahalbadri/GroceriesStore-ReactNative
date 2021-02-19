@@ -4,7 +4,7 @@ import {IcCarrotOff, OnboardImage} from '../../assets';
 import {Button, Gap} from '../../components';
 import {fonts} from '../../utils';
 
-const Onboarding = () => {
+const Onboarding = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ImageBackground source={OnboardImage} style={styles.backgroundImage}>
@@ -16,7 +16,12 @@ const Onboarding = () => {
           </Text>
         </View>
         <Gap height={40} />
-        <Button text={'Get Started'} />
+        <Button
+          text={'Get Started'}
+          onPress={() =>
+            navigation.reset({index: 0, routes: [{name: 'SignIn'}]})
+          }
+        />
       </ImageBackground>
     </View>
   );

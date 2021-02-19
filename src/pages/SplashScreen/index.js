@@ -1,8 +1,15 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Logo} from '../../assets';
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('Onboarding');
+    }, 2000);
+  }, [navigation]);
+
   return (
     <View style={styles.page}>
       <Logo />
